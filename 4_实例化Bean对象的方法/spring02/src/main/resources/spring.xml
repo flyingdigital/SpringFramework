@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 构造器实例化
+    <bean id="user" class="com.flyingdigital.user.User">
+    </bean>
+    -->
+    <!-- 静态工厂实例化
+    <bean id="user" class="com.flyingdigital.factory.StaticFactory" factory-method="createUser"></bean>
+    -->
+    <!-- 实例化工厂实例化，其实跟静态工厂实例化原理一样-->
+    <bean id="factory" class="com.flyingdigital.factory.NormalFactory"></bean>
+    <bean id="user" factory-bean="factory" factory-method="createUser"></bean>
+</beans>
+
